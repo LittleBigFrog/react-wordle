@@ -79,13 +79,14 @@ export const getWordOfDay = () => {
   const epochMs = new Date(2022, 0).valueOf()
   const now = Date.now()
   const msInDay = 3600000
-  const index = Math.floor((now - epochMs) / msInDay)
-//   const index = Math.floor(Math.random() * WORDS.length)
-  const nextday = (index + 1) * msInDay + epochMs
-
+//   const index = Math.floor((now - epochMs) / msInDay)
+  const index = Math.floor(Math.random() * WORDS.length)
+//   const nextday = (index + 1) * msInDay + epochMs
+  const nextday= now + msInDay
+  
   return {
-    solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
-//     solution: localeAwareUpperCase(WORDS[index]),
+//     solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
+    solution: localeAwareUpperCase(WORDS[index]),
     solutionIndex: index,
     tomorrow: nextday,
   }
